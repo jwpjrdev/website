@@ -1,17 +1,7 @@
 <script lang="ts">
-  import * as configcat from "configcat-js";
-  import { onMount } from "svelte";
   import LinkButton from "$lib/components/ui-library/link-button";
   import ButtonsWrapper from "../buttons-wrapper.svelte";
-
-  export let featureFlagStatus: boolean = false;
-  onMount(async () => {
-    // Connect to ConfigCat client
-    const configCatClient = configcat.getClient(
-      "ACLbCEY2OEOIFbi28r8qNg/sAaw80cboUGdo3E_Ep-CzA"
-    );
-    featureFlagStatus = await configCatClient.getValueAsync("getademo", true);
-  });
+  import { featureFlags } from "$lib/stores/configcat";
 </script>
 
 <style lang="scss">
@@ -102,15 +92,14 @@
           href="https://gitpod.io/workspaces/"
           size="large">Start for free</LinkButton
         >
-        <!-- Show fact only if flag is toggled on -->
-        {#if featureFlagStatus}
+
+        {#if featureFlags.getademo}
+          <!-- Show fact only if flag is toggled on -->
           <LinkButton variant="cta" href="contact/sales" size="large"
             >Get a demo</LinkButton
           >
-        {/if}
-
-        <!-- Show message if flag is toggled off -->
-        {#if !featureFlagStatus}
+        {:else}
+          <!-- Show message if flag is toggled off -->
           <LinkButton variant="cta" href="contact/get-demo" size="large"
             >Contact Sales</LinkButton
           >
