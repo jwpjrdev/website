@@ -68,6 +68,28 @@ export const cards: Card[] = [
   },
 ];
 
+export const interestingReads: Card[] = [
+  {
+    title: "5h productivity gain per week/developer",
+    text: "<p class='text-base'>Learn how customers leverage Gitpod to improve their developer experience, remote collaboration and security.</p>",
+    link: {
+      href: "/customers",
+      text: "View customer stories",
+      btnVariant: "primary",
+    },
+  },
+  {
+    title: "CDEs the future of development",
+    text: "<p class='text-base'>Our whitepaper explores a business perspective on CDEs and their benefits for engineering teams.</p>",
+    link: {
+      href: "/whitepaper/cde",
+      text: "Get whitepaper",
+      btnVariant: "secondary",
+    },
+  },
+];
+
+/** TODO: Clean popularArticles as we are not using it anywhere */
 export const popularArticles: Article[] = [
   {
     title: "Dev Environments as Code",

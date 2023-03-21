@@ -201,32 +201,36 @@
 <OpenGraph
   data={{
     description:
-      "Do you need help with any question or issue? Please get in contact with us and we’ll get onto it right away.",
+      "Do you need help with any question or issue? Please get in contact with us and we'll get onto it right away.",
     title: "Contact Support - Need help with any question or issue?",
   }}
 />
 
-<Header
-  title="Contact Support"
-  text="Need help with any question or issue? Please get in contact and we’ll get
+{#if isEmailSent}
+  <div bind:this={sectionStart} data-analytics={`{"dnt":true}`}>
+    <Header
+      title="Thanks for contacting us"
+      text="We'll get back to you shortly."
+      tight={true}
+      titleClasses="!mb-xx-small"
+      textClassNames="max-w-2xl mx-auto text-large"
+    />
+    <SubmissionSuccess contactSubmission={true} />
+  </div>
+{:else}
+  <Header
+    title="Contact Support"
+    text="Need help with any question or issue? Please get in contact and we'll get
   onto it right away."
-  tight={true}
-  textClassNames="max-w-2xl mx-auto text-large"
-/>
-
-<Card
-  size="small"
-  class="shadow-normal p-xx-small sm:py-small sm:px-x-small md:p-medium sm:mx-8 mb-xxx-large"
->
-  <Section id="form" style="margin: 0; padding: 0">
-    <div bind:this={sectionStart} data-analytics={`{"dnt":true}`}>
-      {#if isEmailSent}
-        <SubmissionSuccess
-          title="Thank you for your message"
-          text="We received your message. Our team will take a look and get back to you as
-      soon as possible."
-        />
-      {:else}
+    tight={true}
+    textClassNames="max-w-2xl mx-auto text-large"
+  />
+  <Card
+    size="small"
+    class="shadow-normal p-xx-small sm:py-small sm:px-x-small md:p-medium sm:mx-8 mb-xxx-large"
+  >
+    <Section id="form" style="margin: 0; padding: 0">
+      <div bind:this={sectionStart} data-analytics={`{"dnt":true}`}>
         <form
           on:submit|preventDefault={handleSubmit}
           novalidate
@@ -401,7 +405,7 @@
             <p>Thank you! We'll get back to you soon.</p>
           {/if}
         </form>
-      {/if}
-    </div>
-  </Section>
-</Card>
+      </div>
+    </Section>
+  </Card>
+{/if}

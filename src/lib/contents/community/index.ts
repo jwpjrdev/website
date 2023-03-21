@@ -98,6 +98,39 @@ export const overviewCards = [
 ];
 
 export const contributionHighlights: Record<string, ContentCard[]> = {
+  "February 2023": [
+    {
+      badge: "Content",
+      contributor: "soupbowl",
+      title: "A year of Cloud Coding in Review",
+      text: "Soupbowl writes about their experience using CDE's over the past year",
+      link: {
+        href: "https://soupbowl.blog/2023/02/a-year-of-cloud-code-in-review",
+        text: "Read Blog Post",
+      },
+    },
+    {
+      badge: "Gitpod Community",
+      contributor: "Gitpod Community",
+      title: "Gitpod London Meetup!",
+      text: "We had our second Gitpod Community meetup in London this month",
+      link: {
+        href: "https://beta.guild.host/events/gitpod-london-february-iro7kj",
+        text: "View Event",
+      },
+    },
+    {
+      badge: "Content",
+      contributor: "Benvp",
+      title: "Remote Development in Elixir with Gitpod",
+      text: "Ben shows us how to setup Elixir in Gitpod for easy and fast development",
+      link: {
+        href: "https://benvp.co/blog/remote-development-in-elixir-with-gitpod",
+        text: "Read Blog Post",
+      },
+    },
+  ],
+
   "January 2023": [
     {
       badge: "Community office hours",

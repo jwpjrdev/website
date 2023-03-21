@@ -31,7 +31,7 @@
       {location}
     </div>
     <p class="text-large mt-x-small max-w-[595px]">
-      {description}
+      {@html description}
     </p>
   </div>
 </Header>

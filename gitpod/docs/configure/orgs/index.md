@@ -59,7 +59,6 @@ You can leave an organization using the more actions button in the Members list 
 | Invite Organization Members | Yes   | Yes    |
 | Add Projects                | Yes   | Yes    |
 | Remove Projects             | Yes   | Yes    |
-| Add Projects                | Yes   | Yes    |
 | View Branches               | Yes   | Yes    |
 | View Prebuilds              | Yes   | Yes    |
 | Trigger Prebuilds           | Yes   | Yes    |

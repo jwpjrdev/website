@@ -1,17 +1,12 @@
 <script lang="ts">
-  import { list } from "$lib/contents/contact";
   import CalendlyEmbed from "../get-demo/calendly-embed.svelte";
-  import TickList from "../tick-list.svelte";
+  import HeaderDescription from "$lib/components/events/kubecon-detroit/header-description.svelte";
 </script>
 
 <style lang="postcss">
   header {
     @media (max-width: 810px) {
       @apply flex-col items-center gap-y-x-small;
-
-      p {
-        @apply mb-x-small;
-      }
     }
   }
 
@@ -39,15 +34,20 @@
 
 <header class="flex justify-between mt-small">
   <div>
-    <h1 class="mb-x-small">Get a demo</h1>
-    <p class="text-large mb-small">
-      And learn how your engineering organisation can scale with Gitpod.
-    </p>
-    <TickList {list} textClassNames="text-large" />
+    <HeaderDescription
+      class="!m-0"
+      title="Let's meet at KubeCon EU"
+      label="Conference"
+      date="April 19-21"
+      location="Amsterdam, The Netherlands"
+      description="Our CEO and CTO will be at KubeCon. Schedule a meeting now to discuss running Gitpod at your company.<br/><br/>
+      We'll be at Booth SU22, come and visit us."
+    />
   </div>
+
   <div>
     <CalendlyEmbed
-      calendlyUrl="https://calendly.com/d/d47-7n4-c63?primary_color=ffae33"
+      calendlyUrl="https://calendly.com/d/yyt-j28-84m?primary_color=ffae33"
     />
   </div>
 </header>

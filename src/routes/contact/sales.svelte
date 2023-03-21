@@ -199,12 +199,22 @@
 
 <OpenGraph
   data={{
-    description: "We’ll help you find the best plan for your business.",
+    description: "We'll help you find the best plan for your business.",
     title: "Talk to an expert - Book a demo",
   }}
 />
 
-<div>
+{#if isEmailSent}
+  <div bind:this={sectionStart} data-analytics={`{"dnt":true}`}>
+    <Header
+      title="Thanks for contacting us"
+      text="We'll get back to you shortly."
+      tight={true}
+      textClassNames="max-w-2xl mx-auto text-large"
+    />
+    <SubmissionSuccess contactSubmission={true} />
+  </div>
+{:else}
   <Header
     title="Talk to an expert"
     text="Want to get a custom demo or find the best plan for your company? We'd love to chat."
@@ -212,22 +222,15 @@
     textAlign="left"
     centered={false}
   />
-</div>
-<div class="wrapper flex flex-col lg:flex-row">
-  <Card
-    size="small"
-    class="shadow-normal p-xx-small sm:py-small sm:px-x-small md:p-medium lg:mb-xxx-large md:min-w-[650px] !max-w-[832px]"
-    styles="margin-top: 0"
-    style="flex: 0 0 65%;"
-  >
-    <Section id="form" style="padding: 0; margin: 0">
-      <div bind:this={sectionStart} data-analytics={`{"dnt":true}`}>
-        {#if isEmailSent}
-          <SubmissionSuccess
-            title="Thank you for your message"
-            text="We received your message. Our team will take a look and get back to you as soon as possible."
-          />
-        {:else}
+  <div class="wrapper flex flex-col lg:flex-row">
+    <Card
+      size="small"
+      class="shadow-normal p-xx-small sm:py-small sm:px-x-small md:p-medium lg:mb-xxx-large md:min-w-[650px] !max-w-[832px]"
+      styles="margin-top: 0"
+      style="flex: 0 0 65%;"
+    >
+      <Section id="form" style="padding: 0; margin: 0">
+        <div bind:this={sectionStart} data-analytics={`{"dnt":true}`}>
           <form
             on:submit|preventDefault={handleSubmit}
             novalidate
@@ -403,9 +406,9 @@
               <p>Thank you! We'll get back to you soon.</p>
             {/if}
           </form>
-        {/if}
-      </div>
-    </Section>
-  </Card>
-  <Unleashing />
-</div>
+        </div>
+      </Section>
+    </Card>
+    <Unleashing />
+  </div>
+{/if}

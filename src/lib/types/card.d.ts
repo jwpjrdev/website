@@ -12,6 +12,7 @@ export type Card = {
     href: string;
     text: string;
     [key: string]: any;
+    btnVariant?: string;
   };
   modal?: {
     btnText: string;

@@ -11,13 +11,13 @@ export const topics = [
 let id = 1;
 
 export const demoScreencast: Screencast = {
-  title: "Gitpod demo 🍊",
+  title: "Gitpod Demo 🍊",
   previewText: "Demo",
   description:
     "See how Gitpod launches a ready-to-code project built on five containers using a Node app, .NET app, a Python app as well as Redis and Postgres databases with a simple click.",
-  youtubeId: "KgIWj9rHXS4",
+  youtubeId: "9EBKVimskr8",
   tile: "screencast-16.jpg",
-  duration: 523,
+  duration: 303,
   tags: ["Demo"],
   href: "/screencasts/demo",
 };
