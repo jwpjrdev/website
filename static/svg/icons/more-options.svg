@@ -1,6 +1,1 @@
-<svg width="50" height="51" viewBox="0 0 50 51" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect y="0.742432" width="50" height="50" rx="12" fill="#ECE7E5"/>
-<circle cx="14.2308" cy="25.7424" r="3.23077" fill="#999795"/>
-<circle cx="25.0003" cy="25.7424" r="3.23077" fill="#999795"/>
-<circle cx="35.7693" cy="25.7424" r="3.23077" fill="#999795"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="51" fill="none" viewBox="0 0 50 51"><rect width="50" height="50" y=".742" fill="#ECE7E5" rx="12"/><circle cx="14.231" cy="25.742" r="3.231" fill="#999795"/><circle cx="25" cy="25.742" r="3.231" fill="#999795"/><circle cx="35.769" cy="25.742" r="3.231" fill="#999795"/></svg>
