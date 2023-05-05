@@ -201,35 +201,27 @@ Especially when it comes to Frontend Projects, the dev-server should be able to 
 
 ### Vite
 
-In your `.gitpod.yml` file, you should export the workspace url for the port your server runs into the environment.
-
-```yaml title=".gitpod.yml"
-tasks:
-  - init: npm install
-    command: |
-      export HMR_HOST=`gp url 5173`
-```
-
-After exporting it to the environment, the URL can be accessed in the `vite.config.js`. With the following snippet, you are able to configure HMR to work inside Gitpod, as well as on localhost.
+Vite 3+ works with Gitpod out of the box. However, if you are using Vite 2 you should add the following config:
 
 ```js title="vite.config.js"
-const config = () => ({
+import { defineConfig } from "vite";
+
+export default defineConfig({
   server: {
-    hmr: {
-      clientPort: process.env.HMR_HOST ? 443 : 5173,
-      host: process.env.HMR_HOST
-        ? new URL(process.env.HMR_HOST).hostname
-        : "localhost",
-    },
+    hmr: process.env.GITPOD_WORKSPACE_URL
+      ? {
+          protocol: "wss",
+          clientPort: 443,
+          host: process.env.GITPOD_WORKSPACE_URL.replace("https://", "3000-"),
+        }
+      : true,
   },
 });
-
-export default config;
 ```
 
 ### Webpack
 
-Similar to the setup in Vite, the setup for Webpack consists of two steps: exporting the URL to the environment and consuming the environment variable in the config:
+In your `.gitpod.yml` file, you should export the workspace url for the port your server runs into the environment.
 
 ```yaml title=".gitpod.yml"
 tasks:
