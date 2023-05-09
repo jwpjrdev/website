@@ -399,7 +399,7 @@ export const featureTitles: FeatureTitle[] = [
   },
   {
     main: "40%",
-    sub: "fewer bugs across development lifecylce",
+    sub: "fewer bugs across development lifecycle",
   },
   {
     main: "5h",
