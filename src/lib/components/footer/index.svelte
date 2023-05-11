@@ -26,6 +26,11 @@
       alt: "DevX community logo",
       icon: "/svg/brands/devx.svg",
     },
+    {
+      href: "https://staging.bsky.app/profile/gitpod.io",
+      alt: "BlueSky",
+      icon: "/svg/brands/bluesky.svg",
+    },
   ];
 
   let isModalOpen: boolean = false;
